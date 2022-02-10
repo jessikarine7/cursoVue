@@ -5,18 +5,19 @@
     <img src="https://lencois.mentor.metaway.com.br/diario/assets/imgs/metaway.png" width="130px">
     <h1 class="titulo">Acesso Metaway</h1>
 
-    <div class="informações">
+    <form class="informações">
       <span class="acesso">Login: </span>
       <input class="input" type="text" placeholder="Digite seu email" size="26" maxlength="40">
       <span class="acesso">Senha: </span>
       <input class="input" type="password" placeholder="Digite sua senha" maxlength="6">
       <button class="botao">Entrar</button>
 
-    </div>
+    </form>
 
   </div>
 
 </template>
+
 
 
 <script>
@@ -24,6 +25,28 @@
 export default {
   name: 'Login',
 }
+
+// import Vue from 'vue';
+// import axios from 'axios';
+
+
+// new Vue({
+
+//    el: '#app',
+
+//   data () {
+//     return {
+//       email: []
+
+//     }
+//   },
+
+//   mounted () {
+//     axios
+//       .get('user.json')
+//       .then(response => (this.email = response.data))
+//   }
+// })
 
 </script>
 
@@ -72,6 +95,10 @@ export default {
   width: 50%;
   border-radius: 10px;
   border: none;
+}
+
+.botao:hover{
+  opacity: 0.8;
 }
 
 </style>
