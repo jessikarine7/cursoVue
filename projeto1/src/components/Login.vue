@@ -19,34 +19,19 @@
 </template>
 
 
-
 <script>
 
 export default {
   name: 'Login',
+
+  created() {
+    this.axios
+      .get('user.https://wordsapiv1.p.rapidapi.com/words/hatchback/typeOf')
+      .then((response) => {
+        console.log(response.data)
+      })
+  }
 }
-
-// import Vue from 'vue';
-// import axios from 'axios';
-
-
-// new Vue({
-
-//    el: '#app',
-
-//   data () {
-//     return {
-//       email: []
-
-//     }
-//   },
-
-//   mounted () {
-//     axios
-//       .get('user.json')
-//       .then(response => (this.email = response.data))
-//   }
-// })
 
 </script>
 
