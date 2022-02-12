@@ -4,6 +4,7 @@
 
     <Login />
     <Acesso />
+    <!-- <User /> -->
     
   </div>
 
@@ -12,14 +13,16 @@
 
 <script>
 
-import Login from './components/Login.vue';
-import Acesso from './components/Acesso.vue';
+import Login from './views/Login.vue'
+import Acesso from './views/Acesso.vue'
+// import  *as User from './components/User'
 
 export default {
   name: 'App',
   components: {
     Login,
-    Acesso
+    Acesso,
+    // User
   }
 
 }

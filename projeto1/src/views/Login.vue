@@ -10,11 +10,13 @@
       <input class="input" type="text" placeholder="Digite seu email" size="26" maxlength="40">
       <span class="acesso">Senha: </span>
       <input class="input" type="password" placeholder="Digite sua senha" maxlength="6">
-      <button class="botao">Entrar</button>
-
+      <router-link to="/acesso" class="botao">
+        Entrar
+      </router-link>
     </form>
 
   </div>
+  <!-- <router-view/> -->
 
 </template>
 
@@ -24,13 +26,13 @@
 export default {
   name: 'Login',
 
-  created() {
-    this.axios
-      .get('user.https://wordsapiv1.p.rapidapi.com/words/hatchback/typeOf')
-      .then((response) => {
-        console.log(response.data)
-      })
-  }
+  // created() {
+  //   this.axios
+  //     .get('https://wordsapiv1.p.rapidapi.com/words/hatchback/typeOf')
+  //     .then((response) => {
+  //       console.log(response.data)
+  //     })
+  // }
 }
 
 </script>
