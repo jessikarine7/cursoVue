@@ -2,10 +2,8 @@
 
   <div id="app">
 
-    <Login />
-    <Acesso />
-    <!-- <User /> -->
-    
+    <router-view></router-view>
+
   </div>
 
 </template>
@@ -13,16 +11,16 @@
 
 <script>
 
-import Login from './views/Login.vue'
-import Acesso from './views/Acesso.vue'
-// import  *as User from './components/User'
+// import Login from './views/Login.vue'
+// import Acesso from './views/Acesso.vue'
+
 
 export default {
   name: 'App',
   components: {
-    Login,
-    Acesso,
-    // User
+    // Login,
+    // Acesso,
+
   }
 
 }

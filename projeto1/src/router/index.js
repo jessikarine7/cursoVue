@@ -1,6 +1,6 @@
 import { createRouter, createWebHashHistory } from "vue-router"
-import Login from '../components/Login.vue'
-import Acesso from '../components/Acesso.vue'
+import Login from '../views/Login'
+import Acesso from '../views/Acesso'
 
 
 
@@ -13,7 +13,7 @@ const routes = [
   },
 
   {
-    path: '/acesso',
+    path: '/Acesso',
     name: 'Acesso',
     component: Acesso
   }

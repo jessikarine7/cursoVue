@@ -10,18 +10,19 @@
       <input class="input" type="text" placeholder="Digite seu email" size="26" maxlength="40">
       <span class="acesso">Senha: </span>
       <input class="input" type="password" placeholder="Digite sua senha" maxlength="6">
-      <router-link to="/acesso" class="botao">
-        Entrar
+      <router-link to="/acesso" >
+        <button class="botao"> Entrar</button>
       </router-link>
     </form>
 
+    
   </div>
-  <!-- <router-view/> -->
 
 </template>
 
 
 <script>
+
 
 export default {
   name: 'Login',
