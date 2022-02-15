@@ -7,11 +7,20 @@
 
     <form class="informações">
       <span class="acesso">Login: </span>
-      <input class="input" type="text" placeholder="Digite seu email" size="26" maxlength="40">
+
+      <input class="input" type="text" 
+      placeholder="Digite seu email" 
+      size="26" maxlength="40"
+      v-model="email">
+
       <span class="acesso">Senha: </span>
-      <input class="input" type="password" placeholder="Digite sua senha" maxlength="6">
+
+      <input class="input" type="password" 
+      placeholder="Digite sua senha" 
+      maxlength="6" v-model="password">
+
       <router-link to="/acesso" >
-        <button class="botao"> Entrar</button>
+        <button @click="handleSubmit" class="botao"> Entrar</button>
       </router-link>
     </form>
 
@@ -23,16 +32,39 @@
 
 <script>
 
+
+
 import axios from 'axios'
 
 export default {
-  // name: 'Login',
+
+  data() {
+
+    return{
+      email: [],
+      password: [],
+      users: []
+    }
+  },
+
+  methods: {
+    handleSubmit() {
+      const email= this.email
+      const senha= this.password
+      const user1= this.users.find(u => u.email == email)
+      const user2= this.users.find(u => u.password == senha)
+      console.log(user1, user2)
+    }
+  },
 
   created() {
+
+    const headers = { "Content-Type": "application/json" };
     axios
-      .get('http://localhost:8080/src/user.json')
+      .get('http://localhost:3000/usuarios', { headers })
       .then((response) => {
         console.log(response.data);
+        this.users=response.data
       })
   }
 }
