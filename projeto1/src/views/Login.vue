@@ -23,17 +23,18 @@
 
 <script>
 
+import axios from 'axios'
 
 export default {
-  name: 'Login',
+  // name: 'Login',
 
-  // created() {
-  //   this.axios
-  //     .get('https://wordsapiv1.p.rapidapi.com/words/hatchback/typeOf')
-  //     .then((response) => {
-  //       console.log(response.data)
-  //     })
-  // }
+  created() {
+    axios
+      .get('http://localhost:8080/src/user.json')
+      .then((response) => {
+        console.log(response.data);
+      })
+  }
 }
 
 </script>
