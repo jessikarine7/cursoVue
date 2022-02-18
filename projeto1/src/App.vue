@@ -1,7 +1,7 @@
 <template>
 
   <div id="app">
-
+    <Menu />
     <router-view></router-view>
 
   </div>
@@ -9,18 +9,15 @@
 </template>
 
 
+
 <script>
 
-// import Login from './views/Login.vue'
-// import Acesso from './views/Acesso.vue'
-
+import Menu from './views/Menu.vue'
 
 export default {
   name: 'App',
   components: {
-    // Login,
-    // Acesso,
-
+    Menu
   }
 
 }

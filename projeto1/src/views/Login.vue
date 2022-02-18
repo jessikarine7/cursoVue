@@ -1,9 +1,11 @@
 <template>
 
-  <div class="container">
+  <div class="container-login">
 
-    <img src="https://lencois.mentor.metaway.com.br/diario/assets/imgs/metaway.png" width="130px">
-    <h1 class="titulo">Acesso Metaway</h1>
+    <div>
+      <!-- <img src="https://lencois.mentor.metaway.com.br/diario/assets/imgs/metaway.png" width="130px"> -->
+      <h1 class="titulo">Acesso Metaway</h1>
+    </div>
 
     <form class="informações">
       <span class="acesso">Login: </span>
@@ -20,7 +22,7 @@
       maxlength="6" v-model="password">
 
       <router-link to="/acesso" >
-        <button @click="handleSubmit" class="botao"> Entrar</button>
+        <button class="botao"> Entrar</button>
       </router-link>
     </form>
 
@@ -31,8 +33,6 @@
 
 
 <script>
-
-
 
 import axios from 'axios'
 
@@ -47,14 +47,17 @@ export default {
     }
   },
 
-  methods: {
-    handleSubmit() {
-      const email= this.email
-      const senha= this.password
-      const user1= this.users.find(u => u.email == email)
-      const user2= this.users.find(u => u.password == senha)
-      console.log(user1, user2)
+  beforeRouteLeave(to) {
+    const email= this.email
+    const senha= this.password
+
+    const user1= this.users.some(u => u.email == email)
+    const user2= this.users.some(u => u.password == senha)
+    console.log(to);
+    if (to.name === 'Home') {
+      return true;
     }
+    return user1 && user2;
   },
 
   created() {
@@ -74,10 +77,12 @@ export default {
 
 <style lang="scss">
 
-.container{
+.container-login{
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+
 }
 
 .titulo{
