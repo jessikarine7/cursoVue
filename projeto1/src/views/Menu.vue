@@ -1,9 +1,8 @@
 <template>
 
   <div> 
+      <!-- <p class="logo">Metaway</p> -->
     <nav>
-      <p class="logo">Metaway</p>
-
       <router-link to="/">
         <img src="@/img/home.png" alt="Home">
       </router-link>
@@ -29,22 +28,35 @@
 
 <style  lang="scss">
 
-.logo{
-  font-family: sans-serif;
-  font-size: 12px;
-  color:#fff
-}
+
+// @font-face {
+//   font-family: 'poppins-m';
+//   src: url('/@fonts/Poppins/Poppins-Medium.ttf') format('ttf');
+
+//   font-family: 'poppins-l';
+//   src: url('/@fonts/Poppins/Poppins-Light.ttf') format('ttf');
+// }
+
+
+// .logo{
+//   color: #fff;
+//   font-family: 'poppins-l';
+//   font-size: 17px;
+//   position: absolute;
+//   padding-left: 20px;
+// }
 
 img{
-  width: 40px;
+  width: 30px;
   padding: 10px;
 }
 
 nav{
-  background: #b5eaf2;
+  background: #907ef8;
   display: flex;
   justify-content: center;
   align-content: center;
+  width: 65vh;
   gap: 20px;
 }
  
