@@ -24,6 +24,10 @@
       <router-link to="/acesso" >
         <button class="botao"> Entrar</button>
       </router-link>
+
+      <router-link to="/Cadastro">
+        <p>Não possui cadastro?</p>
+      </router-link>
     </form>
 
     
@@ -54,7 +58,11 @@ export default {
     const user1= this.users.some(u => u.email == email)
     const user2= this.users.some(u => u.password == senha)
     console.log(to);
+
     if (to.name === 'Home') {
+      return true;
+    }
+    if (to.name === 'Cadastro') {
       return true;
     }
     return user1 && user2;

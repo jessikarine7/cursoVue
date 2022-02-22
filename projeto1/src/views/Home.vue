@@ -5,13 +5,17 @@
     <div class="container2">
       <div class="texto">
         
-        <h1>Agenda de contatos</h1>
+        <h1 class="agenda">Agenda</h1>
+        <!-- <p class="contato">De Contatos</p> -->
 
         <div class="explicacao">
-          <p>sistema de gerenciamento de contatos</p>
+          <p class="paragrafo">Sistema de Gerenciamento de Contatos</p>
 
           <router-link to="/Login">
             <button class="button">Login</button>
+          </router-link>
+          <router-link to="/Cadastro">
+            <p>Não possui cadastro?</p>
           </router-link>
 
         </div>
@@ -19,7 +23,7 @@
 
     </div>
 
-    <img class="capa" src="@/img/capa.jpg" alt="">
+    <img class="capa" src="@/img/capa2.png" alt="">
 <div class="fundo"></div>
   </div>
 </template>
@@ -35,59 +39,36 @@ export default {
 
 
 <style scoped>
-  /* @font-face {
-    font-family: "poppins l";
-    src: url("~@/fonts/Poppins/Poppins-Light.ttf") format('ttf');
-    font-weight: 300;
-  } */
-
-  /* @font-face {
-    font-family: "poppins m";
-    src: url("~@/fonts/Poppins/Poppins-Medium.ttf") format('ttf');
-    font-weight: 500;
-  } */
 
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
 
-  .fundo {
+  /* .fundo {
     z-index:0 ;
     position: absolute;
     width: 80%;
-    /* ::before {
-      content: url('@/img/agenda.png');
-      width: 15px;
-      height: 15px;
-    }   */
-  }
-/* 
-  .fundo::after {
-          content: url('../img/agenda.png');
-      width: 15px;
-      height: 15px;
+    background: #c7f0f6;
   } */
-
-
 
   .container{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-self: center;
+    /* align-self: center; */
     align-items: center;
-    /* // margin-top: 4%; */
     gap: 20px;
 
-  }
+  } 
 
-  .capa{
+  .capa {
     z-index: 9999;
     width: 50%;
   }
 
   .container2{
-    background: #907ef8;
-    width: 65vh;
+    background: #EEF3F3;
+    width: 90vh;
     height: 80vh;
+    
   }
 
   .texto{
@@ -97,26 +78,40 @@ export default {
     align-items: center;
     margin-top: 4%;
     gap: 20px;
-    z-index: 9999;
-    width: 80%;
-    height: 100%;
-    /* // border-radius: 40px
-    // position: absolute; */
+    position: absolute;
+    background: #EEF3F3;
+  }
 
+  .explicacao{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* align-self: center; */
+    align-content: flex-end;
+    width: 90vh;
+    height: 50vh;
+    background: #fff;
+    /* background: #d0c9fb; */
+    gap: 20px;
+    
   }
 
   
-  h1{
-    color:#fff;
-    font-size: 35px;
-    font-weight: 300;
+  .agenda{
+    color:#AFB3B3;
+    font-size: 16VH;
+    font-weight: 800;
+    font-family: poppins;
+    background: #EEF3F3;
   }
 
-  p{
+  .paragrafo{
     margin-top: 15px;
-    font-size: 20px;
-    color:#fff;
-    font-weight: 600;
+    font-size: 32px;
+    color:#907ef8;
+    font-family: poppins;
+    font-weight: 300;
+    background: #fff;
   }
 
   .button{
@@ -125,10 +120,10 @@ export default {
     border-color: #907ef8;
     border-style: double;
     border-radius: 20px;
-    font-size: 15px;
-    width: 150%;
-    height: 30px;
-    font-family: "poppins l";
+    font-size: 20px;
+    width: 25vh;
+    height: 40px;
+    font-family: "poppins";
     margin-top: 30px;
   }
 
