@@ -28,27 +28,18 @@
 
 <style  lang="scss">
 
-// .logo{
-//   color: #fff;
-//   font-family: 'poppins-l';
-//   font-size: 17px;
-//   position: absolute;
-//   padding-left: 20px;
-// }
-
 .img{
   width: 30px;
   padding: 10px;
-  background: #EEF3F3;
 }
 
 .menu{
-  background: #EEF3F3;
   display: flex;
   justify-content: center;
   align-content: center;
-  width: 90vh;
+  // width: 100vh;
   gap: 20px;
+  
 }
  
 

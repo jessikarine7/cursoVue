@@ -1,38 +1,39 @@
 <template>
   <div>
     
-     <form class="informações">
+    <form @submit.prevent="createdPost" class="informações">
        <h1>Cadastro</h1>
 
       <span class="acesso">Digite seu Nome </span>
 
       <input class="input" type="text" 
-      placeholder="Digite seu email" 
-      size="26" maxlength="40"
-      v-model="nome">
+      placeholder="Digite seu nome" 
+      id="nome"
+      v-model="FormData.nome">
 
       <span class="acesso">Digite sua data de Nascimento</span>
 
       <input class="input" type="date" 
-      placeholder="Digite seu email" 
-      size="26" maxlength="40"
-      v-model="data">
+      placeholder="Digite sua data de nascimento" 
+      id="data"
+      v-model="FormData.data">
 
       <span class="acesso">Digite seu Email </span>
 
       <input class="input" type="text" 
       placeholder="Digite seu email" 
-      size="26" maxlength="40"
-      v-model="email">
+      id="email"
+      v-model="FormData.email">
 
       <span class="acesso">Crie uma Senha </span>
 
       <input class="input" type="password" 
       placeholder="Digite sua senha" 
-      maxlength="6" v-model="password">
+      id="password"
+      v-model="FormData.password">
 
       <router-link to="/Login">
-        <button class="botao">Cadastrar</button>
+        <button class="botao">Cadastrar</button> 
       </router-link>
 
     </form>
@@ -43,58 +44,92 @@
 
 <script>
 
-// import axios from 'axios'
+import axios from 'axios'
 
 export default {
+
+  name: 'createdPost',
 
   data() {
 
     return{
-      email: [],
-      password: [],
-      nome: [],
-      data: [],
-      users: []
+
+      FormData: {
+        nome: '',
+        data: '',
+        email: '',
+        password: '',
+
+      }
     }
   },
 
-//     beforeRouteLeave(to) {
-//     const email= this.email
-//     const senha= this.password
-//     const data= this.data
-//     const nome= this.nome
+  methods: {
+    createdPost() {
 
-//     const user1= this.users.some(u => u.email == email)
-//     const user2= this.users.some(u => u.password == senha)
-//     const user3= this.users.some(u => u.nome == nome)
-//     const user4= this.users.some(u => u.data == data)
-//     console.log(to);
+      axios
+        .post('http://localhost:3000/usuarios', this.FormData)
+        .then((response) => {
+          console.log(response.data);
 
-//     if (to.name === 'Home') {
-//       return true;
-//     }
+        })
+    }
 
-//     if (to.name === 'Login') {
-//       return true;
-//     }
-//     return user1 && user2 && user3 && user4;
-//   },
-
-
-//   created() {
-
-//     const headers = { "Content-Type": "application/json" };
-//     axios
-//       .post('http://localhost:3000/usuarios', { headers })
-//       .then((response) => {
-//         console.log(response.data);
-//         this.users=response.data
-//       })
-//   }
+  }
 }
 </script>
 
 
 <style scoped>
+
+.container-login{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.titulo{
+  font-family: sans-serif;
+  color: #c42311da;
+  font-size: 33px;
+}
+
+.informações{
+  display: flex;
+  flex-direction: column;
+  gap: 15px
+}
+
+.acesso{
+  font-family: sans-serif;
+  color: rgba(0, 0, 0, 0.671);
+  font-size: 20px;
+}
+
+.input{
+  background: rgba(0, 0, 0, 0.164);
+  font-size: 15px;
+  border: none;
+  border-radius: 10px;
+  height: 35px;
+}
+
+.botao{
+  margin-top: 10px;
+  font-size: 15px;
+  font-family: sans-serif;
+  background: #c42311da;
+  color: white;
+  height: 30px;
+  width: 50%;
+  border-radius: 10px;
+  border: none;
+}
+
+.botao:hover{
+  opacity: 0.8;
+}
 
 </style>

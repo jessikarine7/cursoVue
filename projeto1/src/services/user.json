@@ -2,8 +2,18 @@
   "usuarios": [
     {
       "id": 1,
+      "nome": "Jéssica",
+      "data": 25011994,
       "email": "jessica@teste.com",
       "password": 123456
+    },
+    {
+      "nome": "valter",
+      "data": "1585-02-06",
+      "email": "valter@teste.com",
+      "password": "456789",
+      "users": "",
+      "id": 2
     }
   ]
 }
