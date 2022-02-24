@@ -1,44 +1,51 @@
 <template>
-  <div>
-    
-    <form @submit.prevent="createdPost" class="informações">
-       <h1>Cadastro</h1>
 
-      <span class="acesso">Digite seu Nome </span>
+  <div class="container-login1">
 
-      <input class="input" type="text" 
-      placeholder="Digite seu nome" 
-      id="nome"
-      v-model="FormData.nome">
+    <div class="container-login">
+      
+      <img src="@/img/Cadastro.jpg" alt="l">
 
-      <span class="acesso">Digite sua data de Nascimento</span>
+      <form @submit.prevent="createdPost" class="informações">
+        <h1 class="titulo">Cadastro</h1>
 
-      <input class="input" type="date" 
-      placeholder="Digite sua data de nascimento" 
-      id="data"
-      v-model="FormData.data">
+        <span class="acesso">Nome </span>
 
-      <span class="acesso">Digite seu Email </span>
+        <input class="input" type="text" 
+        placeholder="Digite seu nome" 
+        id="nome"
+        v-model="FormData.nome">
 
-      <input class="input" type="text" 
-      placeholder="Digite seu email" 
-      id="email"
-      v-model="FormData.email">
+        <span class="acesso">Data de Nascimento</span>
 
-      <span class="acesso">Crie uma Senha </span>
+        <input class="input" type="date" 
+        placeholder="Digite sua data de nascimento" 
+        id="data"
+        v-model="FormData.data">
 
-      <input class="input" type="password" 
-      placeholder="Digite sua senha" 
-      id="password"
-      v-model="FormData.password">
+        <span class="acesso">Email </span>
 
-      <router-link to="/Login">
-        <button class="botao">Cadastrar</button> 
-      </router-link>
+        <input class="input" type="text" 
+        placeholder="Digite seu email" 
+        id="email"
+        v-model="FormData.email">
 
-    </form>
+        <span class="acesso">Senha </span>
 
+        <input class="input" type="password" 
+        placeholder="Crie sua senha" 
+        id="password"
+        v-model="FormData.password">
+
+        <router-link to="/Login">
+          <button class="botao">Cadastrar</button> 
+        </router-link>
+
+      </form>
+
+    </div>
   </div>
+
 </template>
 
 
@@ -82,45 +89,67 @@ export default {
 
 <style scoped>
 
-.container-login{
+.container-login1{
   display: flex;
   flex-direction: column;
+  align-items:center;
+  margin-top: 4%;
+  /* justify-content: center; */
+
+}
+
+.container-login{
+  display: flex;
+  flex-direction:row;
   align-items: center;
-  justify-content: center;
+  justify-content:space-evenly;
+  width: 110vh;
+  height: 70vh;
+  background-color: #fff;
+  border-radius: 30px;
 
 }
 
 .titulo{
-  font-family: sans-serif;
-  color: #c42311da;
+  font-family: poppins;
+  font-weight: 800;
+  color: #5744F5;
   font-size: 33px;
+  margin: 3px;
 }
 
 .informações{
   display: flex;
   flex-direction: column;
-  gap: 15px
+  width: 40vh;
+  gap: 10px
 }
 
 .acesso{
-  font-family: sans-serif;
-  color: rgba(0, 0, 0, 0.671);
-  font-size: 20px;
+  font-family: poppins;
+  font-weight: 300;
+  color: #AFB3B3;
+  font-size: 15px;
 }
 
 .input{
-  background: rgba(0, 0, 0, 0.164);
+  background: #5644f528;
+  color: #5744F5;
   font-size: 15px;
   border: none;
   border-radius: 10px;
   height: 35px;
 }
 
+input::placeholder{
+  color: #5644f548;
+}
+
 .botao{
-  margin-top: 10px;
+  margin-top: 20px;
   font-size: 15px;
   font-family: sans-serif;
-  background: #c42311da;
+  background: #5744F5;
   color: white;
   height: 30px;
   width: 50%;
@@ -132,4 +161,17 @@ export default {
   opacity: 0.8;
 }
 
+.cadastro{
+  
+  color: #AFB3B3;
+  font-family: poppins;
+  font-size: 15px;
+  font-weight: 100;
+  text-decoration: none;
+}
+
+.cadastro:hover {
+  font-family: poppins;
+  font-weight: 400;
+}
 </style>

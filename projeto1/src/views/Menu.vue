@@ -3,16 +3,19 @@
   <div> 
       <!-- <p class="logo">Metaway</p> -->
     <nav class="menu">
-      <router-link to="/">
-        <img class="img" src="@/img/home.png" alt="Home">
+      <router-link  class="img" to="/">
+        <h1 class="img">Home</h1>
+        <!-- <img  src="@/img/home.png" alt="Home"> -->
       </router-link>
 
-      <router-link to="/Login">
-        <img class="img" src="@/img/login.png" alt="Login">
+      <router-link class="img" to="/Login">
+        <h1 class="img">Login</h1>
+        <!-- <img class="img" src="@/img/login.png" alt="Login"> -->
       </router-link>
 
-      <router-link to="/Acesso">
-        <img class="img" src="@/img/agenda.png" alt="Agenda">
+      <router-link class="img" to="/Acesso">
+        <h1 class="img">Acesso</h1>
+        <!-- <img class="img" src="@/img/agenda1.png" alt="Agenda"> -->
       </router-link>
     </nav>
   </div>
@@ -29,19 +32,30 @@
 <style  lang="scss">
 
 .img{
-  width: 30px;
+  display: flex;
+  justify-content: center;
+  width: 60px;
   padding: 10px;
+  font-family: poppins;
+  font-weight: 100;
+  font-size: 20px;
+  text-decoration: none;
+  color: #AFB3B3;
+  margin: 0;
 }
 
 .menu{
   display: flex;
   justify-content: center;
   align-content: center;
-  // width: 100vh;
-  gap: 20px;
+  gap: 30px;
   
 }
- 
+
+.img:hover{
+  color:  #5744F5;
+}
+
 
 </style>
 
