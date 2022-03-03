@@ -5,23 +5,25 @@
     <nav class="menu">
       <router-link  class="img" to="/">
         <h1 class="img">Home</h1>
-        <!-- <img  src="@/img/home.png" alt="Home"> -->
       </router-link>
 
       <router-link class="img" to="/Login">
         <h1 class="img">Login</h1>
-        <!-- <img class="img" src="@/img/login.png" alt="Login"> -->
       </router-link>
 
-      <router-link class="img" to="/Acesso">
-        <h1 class="img">Acesso</h1>
-        <!-- <img class="img" src="@/img/agenda1.png" alt="Agenda"> -->
+      <router-link class="img" to="/Cadastro"> 
+        <h1 class="img">Cadastro</h1>
       </router-link>
+
+      <router-link class="img" to="/Agenda"> 
+        <h1 class="img">Agenda</h1>
+      </router-link>
+
+    
     </nav>
   </div>
 
 </template>
-
 
 <script>
 

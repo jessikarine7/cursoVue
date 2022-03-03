@@ -1,6 +1,6 @@
 import { createRouter, createWebHashHistory } from "vue-router"
 import Login from '../views/Login'
-import Acesso from '../views/Acesso'
+import Agenda from '../views/Agenda'
 import Home from '../views/Home'
 import Cadastro from '../views/Cadastro.vue'
 
@@ -12,6 +12,9 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home,
+    // beforeEnter: (to, from, next) => {
+    //   return false
+    // }
    
   },
 
@@ -22,9 +25,9 @@ const routes = [
   },
 
   {
-    path: '/Acesso',
-    name: 'Acesso',
-    component: Acesso,
+    path: '/Agenda',
+    name: 'Agenda',
+    component: Agenda,
    
   },
 

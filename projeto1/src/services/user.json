@@ -6,13 +6,16 @@
       "data": "1994-01-25",
       "email": "jessica@teste.com",
       "password": "123456"
-    },
+    }
+
+  ],
+
+  "contatos": [
     {
-      "nome": "valter",
+      "fk_id": 1,
+      "nome": "Ismar",
       "data": "1585-02-06",
-      "email": "valter@teste.com",
-      "password": "456789",
-      "id": 2
+      "email": "Ismar@teste.com"
     }
   ]
 }

@@ -24,7 +24,7 @@
         placeholder="Digite sua senha" 
         maxlength="6" v-model="password">
 
-        <router-link to="/acesso" >
+        <router-link to="/Agenda" >
           <button class="botao"> Entrar</button>
         </router-link>
 
@@ -164,7 +164,6 @@ input::placeholder{
 }
 
 .cadastro{
-  
   color: #AFB3B3;
   font-family: poppins;
   font-size: 15px;
@@ -173,8 +172,7 @@ input::placeholder{
 }
 
 .cadastro:hover {
-  font-family: poppins;
-  font-weight: 400;
+  color: #5744F5;
 }
 
 </style>
