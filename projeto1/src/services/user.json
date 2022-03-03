@@ -6,16 +6,43 @@
       "data": "1994-01-25",
       "email": "jessica@teste.com",
       "password": "123456"
+    },
+    {
+      "nome": "sed",
+      "data": "1111-10-10",
+      "email": "bhjfssd",
+      "password": "5468468",
+      "usuar": [],
+      "id": 2
+    },
+    {
+      "nome": "duda",
+      "data": "1111-10-10",
+      "email": "duda@teste.com",
+      "password": "5464646",
+      "id": 3
+    },
+    {
+      "nome": "jess",
+      "data": "1222-12-12",
+      "email": "sdesf",
+      "password": "edcfewe",
+      "id": 4
     }
-
   ],
-
+  
   "contatos": [
     {
       "fk_id": 1,
       "nome": "Ismar",
       "data": "1585-02-06",
       "email": "Ismar@teste.com"
+    },
+    {
+      "fk_id": 1,
+      "nome": "Valter",
+      "data": "1995-02-06",
+      "email": "Valter@teste.com"
     }
   ]
 }

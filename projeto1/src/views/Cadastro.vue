@@ -37,9 +37,7 @@
         id="password"
         v-model="FormData.password">
 
-        <router-link to="/Login">
-          <button class="botao">Cadastrar</button> 
-        </router-link>
+        <button type="submit" class="botao">Cadastrar</button> 
 
       </form>
 
@@ -50,6 +48,8 @@
 
 
 <script>
+
+
 
 import axios from 'axios'
 
@@ -66,7 +66,6 @@ export default {
         data: '',
         email: '',
         password: '',
-        user:[]
       }
     }
   },
@@ -78,10 +77,9 @@ export default {
         .post('http://localhost:3000/usuarios', this.FormData)
         .then((response) => {
           console.log(response.data);
-
+          this.$router.push('/Login')
         })
     }
-
   }
 }
 </script>

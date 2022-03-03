@@ -15,7 +15,7 @@
           <input class="input-n" type="text" >
         </div>
 
-        <div class="card">
+        <div class="card" >
           <div class="linha">
 
             <div class="icones">
@@ -25,7 +25,7 @@
             </div>
             
             <div class="descrisao">
-              <p class="get"></p>
+              <p class="get">{{ contatos.nome }}</p>
               <p class="get">Data</p>
               <p class="get">Email</p>
             </div>
@@ -49,11 +49,12 @@ export default {
   data() {
 
     return{
-      nome:[],
-      data:[],
-      email: [],
-      password: [],
-      search:''
+
+      contatos: {
+        nome:[],
+        data:[],
+        email: [],
+      }
     }
   },
   
@@ -61,20 +62,12 @@ export default {
 
     const headers = { "Content-Type": "application/json" };
     axios
-      .get('http://localhost:3000/usuarios', { headers })
+      .get('http://localhost:3000/contatos', { headers })
       .then((response) => {
         console.log(response.data);
-        this.users=response.data
+        this.contatos=response.data
       })
   }
-
-  // computed: {
-  //   filterUser: function() {
-  //     return
-  //   }
-  //     const filtro = users.filter(filterUser);
-  //     console.log(filtro);
-  // }
 
 }
 </script>
