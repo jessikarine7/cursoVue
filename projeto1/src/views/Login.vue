@@ -9,7 +9,7 @@
       <div>
       </div>
 
-      <form class="informações">
+      <form class="informações" @submit.prevent="handleSubmit">
         <h1 class="titulo">Acesso</h1>
         <span class="acesso">Login </span>
 
@@ -24,9 +24,7 @@
         placeholder="Digite sua senha" 
         maxlength="6" v-model="password">
 
-        <router-link to="/Agenda" >
-          <button class="botao"> Entrar</button>
-        </router-link>
+        <button class="botao"> Entrar</button>
 
         <router-link class="cadastro" to="/Cadastro">
           <p class="cadastro">Não possui cadastro?</p>
@@ -50,27 +48,10 @@ export default {
   data() {
 
     return{
-      email: [],
-      password: [],
+      email: '',
+      password: '',
       users: []
     }
-  },
-
-  beforeRouteLeave(to) {
-    const email= this.email
-    const senha= this.password
-
-    const user1= this.users.some(u => u.email == email)
-    const user2= this.users.some(u => u.password == senha)
-    console.log(to);
-
-    if (to.name === 'Home') {
-      return true;
-    }
-    if (to.name === 'Cadastro') {
-      return true;
-    }
-    return user1 && user2;
   },
 
   created() {
@@ -80,13 +61,25 @@ export default {
       .get('http://localhost:3000/usuarios', { headers })
       .then((response) => {
         console.log(response.data);
-        this.users=response.data
+        this.users = response.data
       })
+  },
+  methods: {
+    handleSubmit() {
+      const email = this.email
+      const senha = this.password
+
+      const user1 = this.users.some(u => u.email == email)
+      const user2 = this.users.some(u => u.password == senha)
+
+      localStorage.setItem('logado', true)
+      this.$router.push('/Agenda')
+      return user1 && user2;
+    }
   }
 }
 
 </script>
-
 
 <style lang="scss">
 

@@ -4,18 +4,12 @@ import Agenda from '../views/Agenda'
 import Home from '../views/Home'
 import Cadastro from '../views/Cadastro.vue'
 
-
-
 const routes = [
 
   {
     path: '/',
     name: 'Home',
-    component: Home,
-    // beforeEnter: (to, from, next) => {
-    //   return false
-    // }
-   
+    component: Home,   
   },
 
   {
@@ -28,7 +22,10 @@ const routes = [
     path: '/Agenda',
     name: 'Agenda',
     component: Agenda,
-   
+    beforeEnter: () => {
+      const isLogged = localStorage.getItem('logado') === 'true'
+      return isLogged
+    }
   },
 
   {
@@ -42,8 +39,6 @@ const routes = [
 const router = createRouter({
   history: createWebHashHistory(),
   routes
-
-  
 })
 
 export default router

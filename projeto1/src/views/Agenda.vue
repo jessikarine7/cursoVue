@@ -15,22 +15,24 @@
           <input class="input-n" type="text" >
         </div>
 
-        <div class="card" >
-          <div class="linha">
+        <div class="card-container">
+          <div class="card" v-for="contato of contatos" :key="contato.id">
+            <div class="linha">
+              <div class="icones">
+                <img src="@/img/login3.png" class="pessoa">
+                <img src="@/img/calendario3.png" class="pessoa">
+                <img src="@/img/email2.png" class="pessoa">
+              </div>
 
-            <div class="icones">
-              <img src="@/img/login3.png" class="pessoa">
-              <img src="@/img/calendario3.png" class="pessoa">
-              <img src="@/img/email2.png" class="pessoa">
-            </div>
-            
-            <div class="descrisao">
-              <p class="get">{{ contatos.nome }}</p>
-              <p class="get">Data</p>
-              <p class="get">Email</p>
-            </div>
+              <div class="descrisao">
+                <p class="get">{{contato.nome}}</p>
+                <p class="get">{{contato.data}}</p>
+                <p class="get">{{contato.email}}</p>
+              </div>
 
+            </div>
           </div>
+
         </div>
       </div>
 
@@ -74,6 +76,11 @@ export default {
 
 
 <style  lang="scss">
+
+.card-container {
+  display: flex;
+  gap: 5%;
+}
   
 .container-acesso1{
   display: flex;
