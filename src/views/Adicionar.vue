@@ -45,9 +45,9 @@ export default {
     return{
 
       FormContatos: {
-        fk_id:'',
         nome: '',
-        telefone: ''
+        telefone: '',
+        
       }
     }
   },
@@ -57,16 +57,17 @@ export default {
     postContatos() {
   
       axios
-        .post('http://localhost:3000/contatos', this.FormContatos)
+        .post('http://localhost:3000/contatos/', this.FormContatos)
         .then((response) => {
           console.log(response.data);
-          this.$router.push('/Agenda')
+          
+          
         })
         .catch((error) => {
           console.log(error)
         })
-    // localStorage.setItem('logado', true)
-    }
+    },
+
 
   }
 }

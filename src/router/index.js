@@ -20,7 +20,7 @@ const routes = [
   },
 
   {
-    path: '/Agenda',
+    path: '/Agenda/:id',
     name: 'Agenda',
     component: Agenda,
     beforeEnter: () => {
@@ -40,10 +40,6 @@ const routes = [
     path: '/Adicionar',
     name: 'Adicionar',
     component: Adicionar,
-    beforeEnter: () => {
-      const isLogged = localStorage.getItem('logado') === 'true'
-      return isLogged
-    }
   }
 
 ]
