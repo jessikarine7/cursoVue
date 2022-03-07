@@ -10,9 +10,15 @@
       </div>
 
       <div class="corpo">
-        <div class="pesquisa">
-        <label class="pesquisa-nome" for="">Pesquisar Nome</label>
-          <input class="input-n" type="text" >
+        <div class="pesquisa-1">
+          <div class="pesquisa">
+            <label class="pesquisa-nome" for="">Pesquisar Nome</label>
+            <input class="input-n" type="text" >
+          </div>
+
+            <router-link class="adicionar" to="/adicionar">
+              <p class="adicionar">Adicionar contatos</p>
+            </router-link>
         </div>
 
         <div class="card-container">
@@ -20,14 +26,12 @@
             <div class="linha">
               <div class="icones">
                 <img src="@/img/login3.png" class="pessoa">
-                <img src="@/img/calendario3.png" class="pessoa">
-                <img src="@/img/email2.png" class="pessoa">
+                <img src="@/img/telefone.png" class="pessoa">
               </div>
 
               <div class="descrisao">
                 <p class="get">{{contato.nome}}</p>
-                <p class="get">{{contato.data}}</p>
-                <p class="get">{{contato.email}}</p>
+                <p class="get">{{contato.telefone}}</p>
               </div>
 
             </div>
@@ -79,7 +83,11 @@ export default {
 
 .card-container {
   display: flex;
-  gap: 5%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2%;
+  height: 70vh;
+  align-content: start;
 }
   
 .container-acesso1{
@@ -94,19 +102,19 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 150vh;
-  height: 70vh;
+  width: 160vh;
+  height: 80vh;
   background-color: #fff;
   border-radius: 30px;
-  gap: 40px;
-  // opacity: 0.8;
+  gap: 30px;
+  
 }
 
 .titulo-a{
   font-family: poppins;
   font-weight: 800;
   color: #fff;
-  font-size: 33px;
+  font-size: 30px;
 }
 
 .contatos{
@@ -115,8 +123,8 @@ export default {
   align-items: center;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
-  width: 150vh;
-  height: 10vh;
+  width: 160vh;
+  height: 8vh;
   background-color: #5744F5;
   
 }
@@ -124,7 +132,6 @@ export default {
 .pesquisa{
   display: flex;
   justify-content: baseline;
-  width: 150vh;
   gap: 20px;
 
 }
@@ -138,7 +145,7 @@ export default {
 .input-n{
   background-color: #5644f528;
   border: none;
-  width: 20%;
+  width: 150px;
   border-radius: 10px;
   color: #5744F5;
 }
@@ -147,7 +154,7 @@ export default {
   display: flex;
   flex-direction: column;
   margin-left: 10%;
-  gap: 80px;
+  gap: 25px;
 }
 
 .card{
@@ -155,21 +162,23 @@ export default {
   justify-content:center;
   align-items: center;
   align-self: baseline;
-  width: 30vh;
-  height: 30vh;
+  width: 25vh;
+  height: 15vh;
+  margin-top: 
+  2%;
   border-radius: 25px;
   background-color: #5644f528;
 }
 
 .linha{
   display: flex;
-  justify-content:center;
+  justify-content:flex-start;
   flex-direction: row;
   align-items:center;
   align-content: center;
-  gap: 40px;
-  width: 25vh;
-  height: 25vh;
+  gap: 30px;
+  width: 21vh;
+  height: 11vh;
   border-style:double;
   border-width:2px;
   border-color: #5744F5;
@@ -178,8 +187,8 @@ export default {
 }
 
 .pessoa{
-  width: 30px;
-  height: 30px;
+  width: 22px;
+  height: 22px;
   margin: 0;
 }
 
@@ -188,12 +197,12 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
-  width: 30px;
-  height: 130px;
+  gap: 3px;
+  width: 10px;
+  // height: 100px;
   font-family: poppins;
   font-weight: 400;
-  font-size: 13px;
+  font-size: 12px;
   color: #5744F5;
   margin-top: 10px;
 }
@@ -208,9 +217,29 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
-  width: 30px;
-  height: 130px;
+  gap: 10px;
+  width: 20px;
+  margin-left: 20px;
+  // height: 130px;
+}
+
+.pesquisa-1{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+
+}
+
+.adicionar{
+  font-family: poppins;
+  font-size: 12px;
+  color:#AFB3B3;
+  text-decoration: none;
+}
+
+.adicionar:hover{
+  color: #5744F5;
 }
 
 </style>

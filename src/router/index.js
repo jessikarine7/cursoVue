@@ -3,6 +3,7 @@ import Login from '../views/Login'
 import Agenda from '../views/Agenda'
 import Home from '../views/Home'
 import Cadastro from '../views/Cadastro.vue'
+import Adicionar from '../views/Adicionar.vue'
 
 const routes = [
 
@@ -33,7 +34,18 @@ const routes = [
     name: 'Cadastro',
     component: Cadastro,
    
+  },
+
+  {
+    path: '/Adicionar',
+    name: 'Adicionar',
+    component: Adicionar,
+    beforeEnter: () => {
+      const isLogged = localStorage.getItem('logado') === 'true'
+      return isLogged
+    }
   }
+
 ]
 
 const router = createRouter({
