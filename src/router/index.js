@@ -14,13 +14,14 @@ const routes = [
   },
 
   {
-    path: '/Login',
+    path: '/Login/:id',
     name: 'Login',
-    component: Login
+    component: Login,
+    props: true
   },
 
   {
-    path: '/Agenda/:id',
+    path: '/Agenda',
     name: 'Agenda',
     component: Agenda,
     beforeEnter: () => {
@@ -44,9 +45,17 @@ const routes = [
 
 ]
 
+const user = {
+  props: ['id'],
+  template: '<div>user {{ id }}</div>'
+}
+
 const router = createRouter({
   history: createWebHashHistory(),
   routes
+  
 })
+
+const routes = [{ path: '/user/:id', component: user, props: true }]
 
 export default router

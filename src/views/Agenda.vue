@@ -16,7 +16,7 @@
             <input class="input-n" type="text" >
           </div>
 
-            <router-link class="adicionar" to="/adicionar">
+            <router-link class="adicionar" to="/Adicionar">
               <p class="adicionar">Adicionar contatos</p>
             </router-link>
         </div>

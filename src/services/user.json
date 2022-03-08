@@ -6,7 +6,6 @@
       "data": "1994-01-25",
       "email": "jessica@teste.com",
       "password": "123456"
-
     },
     {
       "nome": "sed",
@@ -31,7 +30,6 @@
       "id": 4
     }
   ],
-
   "contatos": [
     {
       "id": 1,
@@ -74,6 +72,11 @@
       "telefone": "2222222222",
       "fk_id": [],
       "id": 7
+    },
+    {
+      "nome": "ddd",
+      "telefone": "ee3333333",
+      "id": 8
     }
   ]
 }
