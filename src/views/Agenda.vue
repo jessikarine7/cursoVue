@@ -16,7 +16,7 @@
             <input class="input-n" type="text" >
           </div>
 
-            <router-link class="adicionar" to="/Adicionar">
+            <router-link class="adicionar"  :to="{ name: 'Adicionar', params: { id: id }}">
               <p class="adicionar">Adicionar contatos</p>
             </router-link>
         </div>
@@ -63,6 +63,7 @@ export default {
       }
     }
   },
+  props: ['id'],
   
   created() {
 

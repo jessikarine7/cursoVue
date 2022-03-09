@@ -48,20 +48,22 @@ export default {
         nome: '',
         telefone: '',
         
-        
       }
     }
   },
-
+  props: ['id'],
 
   methods: {
     postContatos() {
+
+      // const user = this.users.find(u=> u.id )
   
       axios
         .post('http://localhost:3000/contatos/', this.FormContatos)
         .then((response) => {
           console.log(response.data);
-          
+           
+          // this.$router.push(`/Agenda/${user.id}`)
         })
         .catch((error) => {
           console.log(error)

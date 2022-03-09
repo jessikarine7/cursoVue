@@ -14,20 +14,21 @@ const routes = [
   },
 
   {
-    path: '/Login/:id',
+    path: '/Login',
     name: 'Login',
     component: Login,
     props: true
   },
 
   {
-    path: '/Agenda',
+    path: '/Agenda/:id',
     name: 'Agenda',
     component: Agenda,
     beforeEnter: () => {
       const isLogged = localStorage.getItem('logado') === 'true'
       return isLogged
-    }
+    },
+    props: true
   },
 
   {
@@ -38,17 +39,13 @@ const routes = [
   },
 
   {
-    path: '/Adicionar',
+    path: '/Adicionar/:id',
     name: 'Adicionar',
     component: Adicionar,
+    props: true
   }
 
 ]
-
-const user = {
-  props: ['id'],
-  template: '<div>user {{ id }}</div>'
-}
 
 const router = createRouter({
   history: createWebHashHistory(),
@@ -56,6 +53,5 @@ const router = createRouter({
   
 })
 
-const routes = [{ path: '/user/:id', component: user, props: true }]
 
 export default router

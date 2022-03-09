@@ -71,9 +71,10 @@ export default {
 
       const user1 = this.users.some(u => u.email == email)
       const user2 = this.users.some(u => u.password == senha)
+      const user = this.users.find(u=> u.id )
 
       localStorage.setItem('logado', true)
-      this.$router.push('/Agenda')
+      this.$router.push(`/Agenda/${user.id}`)
       return user1 && user2;
     }
   }
