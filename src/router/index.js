@@ -25,6 +25,7 @@ const routes = [
     name: 'Agenda',
     component: Agenda,
     beforeEnter: () => {
+      
       const isLogged = localStorage.getItem('logado') === 'true'
       return isLogged
     },

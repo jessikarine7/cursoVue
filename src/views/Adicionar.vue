@@ -47,7 +47,6 @@ export default {
       FormContatos: {
         nome: '',
         telefone: '',
-        
       }
     }
   },
@@ -55,15 +54,12 @@ export default {
 
   methods: {
     postContatos() {
-
-      // const user = this.users.find(u=> u.id )
-  
       axios
-        .post('http://localhost:3000/contatos/', this.FormContatos)
+        .post(`http://localhost:3000/usuarios/${this.id}/contatos`, this.FormContatos)
         .then((response) => {
           console.log(response.data);
-           
-          // this.$router.push(`/Agenda/${user.id}`)
+          
+          this.$router.push(`/Agenda/${this.id}`)
         })
         .catch((error) => {
           console.log(error)

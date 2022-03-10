@@ -58,8 +58,7 @@ export default {
 
       contatos: {
         nome:[],
-        data:[],
-        email: [],
+        telefone:[]
       }
     }
   },
@@ -69,16 +68,15 @@ export default {
 
     const headers = { "Content-Type": "application/json" };
     axios
-      .get('http://localhost:3000/contatos', { headers })
+      .get( `http://localhost:3000/usuarios/${this.id}/contatos/` , { headers })
       .then((response) => {
         console.log(response.data);
         this.contatos=response.data
       })
   }
-
 }
-</script>
 
+</script>
 
 <style  lang="scss">
 
@@ -154,7 +152,7 @@ export default {
 .corpo{
   display: flex;
   flex-direction: column;
-  margin-left: 10%;
+  margin-left: 7%;
   gap: 25px;
 }
 
