@@ -13,7 +13,9 @@
         <div class="pesquisa-1">
           <div class="pesquisa">
             <label class="pesquisa-nome" for="">Pesquisar Nome</label>
-            <input class="input-n" type="text" >
+            <input class="input-n" type="text" v-model='nome'>
+
+            <Autocomplete v-model="contato" :options="contatos" @shouldSearch="created" @select="onSelect">
           </div>
 
             <router-link class="adicionar"  :to="{ name: 'Adicionar', params: { id: id }}">
@@ -53,15 +55,20 @@ import axios from 'axios'
 export default {
 
   data() {
-
     return{
-
       contatos: {
         nome:[],
-        telefone:[]
+        telefone:[],
       }
     }
   },
+
+  methods:{
+    onSelect(contatos) {
+      console.log(contatos);
+    }
+  },
+
   props: ['id'],
   
   created() {
