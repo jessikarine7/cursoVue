@@ -15,7 +15,7 @@
             <label class="pesquisa-nome" for="">Pesquisar Nome</label>
             <input class="input-n" type="text" v-model='nome'>
 
-            <Autocomplete v-model="contato" :options="contatos" @shouldSearch="created" @select="onSelect">
+            <!-- <Autocomplete v-model="contato" :options="contatos" @shouldSearch="created" @select="onSelect"> -->
           </div>
 
             <router-link class="adicionar"  :to="{ name: 'Adicionar', params: { id: id }}">
@@ -63,11 +63,11 @@ export default {
     }
   },
 
-  methods:{
-    onSelect(contatos) {
-      console.log(contatos);
-    }
-  },
+  // methods:{
+  //   onSelect(contatos) {
+  //     console.log(contatos);
+  //   }
+  // },
 
   props: ['id'],
   
