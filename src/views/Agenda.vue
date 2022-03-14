@@ -13,7 +13,7 @@
         <div class="pesquisa-1">
           <div class="pesquisa">
             <label class="pesquisa-nome" for="">Pesquisar Nome</label>
-            <input class="input-n" type="text" v-model='nome'>
+            <input class="input-n" type="text" :value="keyword" @input="onInput($event.target.value)">
 
             <!-- <Autocomplete v-model="contato" :options="contatos" @shouldSearch="created" @select="onSelect"> -->
           </div>
@@ -54,22 +54,35 @@ import axios from 'axios'
 
 export default {
 
+  props: ['id'],
+    
   data() {
     return{
       contatos: {
         nome:[],
         telefone:[],
-      }
+      },
+      keyword: '',
     }
   },
 
-  // methods:{
-  //   onSelect(contatos) {
-  //     console.log(contatos);
-  //   }
-  // },
 
-  props: ['id'],
+  watch: {
+    value(value) {
+      this.keyword = value;
+    }
+  },
+
+  autocomplete() {
+    this.keyword = this.value;
+  },
+
+  methods: {
+    onInput(valor){
+      this.$emit( Event,'input', valor);
+    },
+  },
+
   
   created() {
 
