@@ -13,9 +13,7 @@
         <div class="pesquisa-1">
           <div class="pesquisa">
             <label class="pesquisa-nome" for="">Pesquisar Nome</label>
-            <input class="input-n" type="text" :value="keyword" @input="onInput($event.target.value)">
-
-            <!-- <Autocomplete v-model="contato" :options="contatos" @shouldSearch="created" @select="onSelect"> -->
+            <input class="input-n" type="text" v-model="search"/>
           </div>
 
             <router-link class="adicionar"  :to="{ name: 'Adicionar', params: { id: id }}">
@@ -24,7 +22,7 @@
         </div>
 
         <div class="card-container">
-          <div class="card" v-for="contato of contatos" :key="contato.id">
+          <div class="card" v-for="contato of filtro" :key="contato.id">
             <div class="linha">
               <div class="icones">
                 <img src="@/img/login3.png" class="pessoa">
@@ -57,42 +55,53 @@ export default {
   props: ['id'],
     
   data() {
-    return{
-      contatos: {
-        nome:[],
-        telefone:[],
-      },
-      keyword: '',
+    return {
+      search: '',
+      flag: false,
+      contatos: [
+        { 
+          nome: '',
+          telefone: '',
+        }
+      ],
     }
   },
 
+  // watch: {
+  //   value(value) {
+  //     this.keyword = value;
+  //   }
+  // },
 
-  watch: {
-    value(value) {
-      this.keyword = value;
-    }
-  },
+  // autocomplete() {
+  //   this.keyword = this.value;
+  // },
 
-  autocomplete() {
-    this.keyword = this.value;
-  },
-
-  methods: {
-    onInput(valor){
-      this.$emit( Event,'input', valor);
-    },
-  },
+  // methods: {
+  //   onInput(valor){
+  //     this.$emit( Event,'input', valor);
+  //   },
+  // },
 
   
   created() {
-
     const headers = { "Content-Type": "application/json" };
     axios
       .get( `http://localhost:3000/usuarios/${this.id}/contatos/` , { headers })
-      .then((response) => {
-        console.log(response.data);
-        this.contatos=response.data
-      })
+      
+        .then((response) =>{
+          console.log(response.data);
+          this.contatos=response.data
+        })
+  },
+
+  computed: {
+    filtro: function(){
+      console.log('filtro');
+      return this.contatos.filter((contato) => {
+        return contato.nome.match(this.search);
+      });
+    }
   }
 }
 
