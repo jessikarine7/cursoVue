@@ -4,7 +4,7 @@
 
     <div class="container-login">
       
-      <img src="@/img/Cadastro.jpg" alt="l">
+      <img class="imagem" src="@/img/Cadastro.jpg" alt="l">
 
       <form @submit.prevent="createdPost" class="informações">
         <h1 class="titulo">Cadastro</h1>
@@ -136,9 +136,9 @@ export default {
   height: 35px;
 }
 
-input::placeholder{
+/* input::placeholder{
   color: #5644f548;
-}
+} */
 
 .botao{
   margin-top: 20px;
@@ -169,4 +169,124 @@ input::placeholder{
   font-family: poppins;
   font-weight: 400;
 }
+
+@media (max-width: 1200px) {
+  
+  .container-login{
+    width: 95vh;
+  }
+
+  .informações{
+    width: 35vh;
+  }
+
+}
+
+@media (max-width: 1100px) {
+  
+  .container-login{
+    width: 90vh;
+    /* height: 75vh; */
+  }
+
+  .imagem{
+    width: 40vh;
+  }
+
+  .titulo{
+    font-size: 27px;
+  }
+
+}
+
+@media (max-width: 900px) {
+  
+  .container-login{
+    width: 85vh;
+    /* height: 70vh; */
+  }
+
+  .informações{
+    width: 30vh;
+  }
+
+  .titulo{
+    font-size: 27px;
+  }
+
+  .imagem{ 
+    width: 40vh;
+  }
+
+}
+
+@media (max-width: 800px) {
+  
+  .container-login{
+    width: 80vh;
+    /* height: 60vh; */
+  }
+
+  .informações{
+    width: 30vh;
+    gap: 7px;
+  }
+
+  .imagem{ 
+    width: 35vh;
+  }
+
+  .titulo{
+    font-size: 25px;
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  .imagem{
+    width: 30vh;
+  }
+
+  .container-login{
+    width: 65vh;
+    /* height: 60vh; */
+  }
+
+  .informações{
+    width: 28vh;
+    gap: 7px;
+  }
+
+  .acesso{
+    font-size: 13px;
+  }
+
+  .cadastro{
+    font-size: 10px;
+  }
+
+  .titulo{
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .imagem{
+    display: none;
+  }
+
+  .container-login{
+    width: 40vh;
+    /* height: 50vh; */
+  }
+
+  .informações{
+    margin-top: 25px;
+    width: 25vh;
+    
+  }
+}
+
 </style>

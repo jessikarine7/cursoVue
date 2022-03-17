@@ -6,7 +6,7 @@
         <img class="capa" src="@/img/capa4.png" alt="">
       </div>
     <div class="texto">
-        <h1 class="agenda">Sistema de gerenciamento</h1>
+        <h1 class="agenda">Sistema de Gerenciamento</h1>
         <p class="paragrafo">DE CONTATOS</p>
 
       <div class="acesso">
@@ -35,15 +35,6 @@ export default {
 
 
 <style scoped>
-/* 
-  @font-face {
-    font-family: poppins-l;
-    src: url('../assets/fonts/Poppins/Poppins-Italic.ttf');
-  }
-
-  .text {
-    font-family: poppins-l;
-  } */
 
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
 
@@ -132,7 +123,95 @@ export default {
     flex-direction: row-reverse;
     align-items:center;
     gap: 80px;
-  } 
+  }
 
+  @media (max-width: 1200px) {
+    
+    .agenda{
+      font-size: 40px;
+    }
+    
+    .paragrafo{
+      font-size: 30px;
+    }
+
+  }
+
+  @media (max-width: 1000px) {
+    
+    .agenda{
+      font-size: 35px;
+    }
+    
+    .paragrafo{
+      font-size: 22px;
+    }
+
+    .button{
+      width: 20vh;
+      font-size: 15px;
+    }
+
+    .cadastro{
+      font-size: 10px;
+    }
+
+    .acesso{
+      align-self: flex-start;
+    }
+
+    .capa{
+      width: 50vh;
+    }
+
+  }
+
+  @media (max-width: 850px) {
+
+    .agenda{
+      font-size: 30px;
+    }
+    
+    .paragrafo{
+      font-size: 20px;
+    }
+    
+    .capa{
+      width: 35vh;
+    }
+    
+    .button{
+      width: 17vh;
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 700px) {
+
+    .agenda{
+      font-size: 25px;
+    }
+    
+    .paragrafo{
+      font-size: 18px;
+    }
+    
+    .capa{
+      width: 25vh;
+    }
+    
+    .button{
+      width: 15vh;
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .capa{
+      display: none;
+    }
+    
+  }
+  
 </style>
 

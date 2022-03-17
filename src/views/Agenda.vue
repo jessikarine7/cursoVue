@@ -270,5 +270,162 @@ export default {
   color: #5744F5;
 }
 
+@media (max-width: 1500px) {
+  
+  .container-acesso {
+    width: 140vh;
+  }
+
+  .contatos {
+    width: 140vh;
+  }
+
+}
+
+@media (max-width: 1300px) {
+  
+  .container-acesso {
+    width: 120vh;
+  }
+
+  .contatos {
+    width: 120vh;
+  }
+
+}
+
+@media (max-width: 1200px) {
+  
+  .container-acesso {
+    width: 100vh;
+  }
+
+  .contatos {
+    width: 100vh;
+  }
+
+}
+
+@media (max-width: 1000px) {
+  
+  .container-acesso {
+    width: 90vh;
+  }
+
+  .contatos {
+    width: 90vh;
+  }
+
+}
+
+@media (max-width: 900px) {
+  
+  .container-acesso {
+    width: 80vh;
+  }
+
+  .contatos {
+    width: 80vh;
+  }
+
+}
+
+@media (max-width: 800px) {
+  
+  .container-acesso {
+    width: 70vh;
+  }
+
+  .contatos {
+    width: 70vh;
+  }
+
+}
+
+@media (max-width: 700px) {
+  
+  .container-acesso {
+    width: 60vh;
+  }
+
+  .contatos {
+    width: 60vh;
+  }
+
+}
+
+@media (max-width: 600px) {
+  
+  .corpo{
+    margin: 0;
+  }
+
+  .titulo-a{
+    font-size: 25px;
+  }
+  
+  .container-acesso {
+    width: 50vh;
+  }
+
+  .contatos {
+    width: 50vh;
+  }
+
+  .pesquisa{
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .pesquisa-1{
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+  }
+
+  .card-container{
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+  }
+
+}
+
+@media (max-width: 500px) {
+
+  .container-acesso {
+    width: 40vh;
+  }
+
+  .contatos {
+    width: 40vh;
+  }
+
+}
+
+@media (max-width: 300px) {
+
+  .titulo-a{
+    font-size: 20px;
+  }
+
+  .container-acesso {
+    justify-content: center;
+    align-items: center;
+    min-width: 305h;
+  }
+
+  .contatos {
+    min-width: 35vh;
+  }
+
+  .pesquisa{
+    margin: 0;
+  }
+}
 </style>
 

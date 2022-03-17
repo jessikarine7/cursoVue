@@ -4,7 +4,7 @@
     
 
     <div class="container-login">
-      <img src="@/img/loginC.jpg" alt="l">
+      <img  class="imagem" src="@/img/loginC.jpg" alt="l">
 
       <div>
       </div>
@@ -90,9 +90,6 @@ export default {
   flex-direction: column;
   align-items:center;
   margin-top: 4%;
-
-  // justify-content: center;
-
 }
 
 .container-login{
@@ -104,7 +101,6 @@ export default {
   height: 70vh;
   background-color: #fff;
   border-radius: 30px;
-
 }
 
 .titulo{
@@ -168,6 +164,97 @@ input::placeholder{
 
 .cadastro:hover {
   color: #5744F5;
+}
+
+@media (max-width: 1200px) {
+  
+  .container-login{
+    width: 95vh;
+  }
+
+  .informações{
+    width: 35vh;
+  }
+
+}
+
+@media (max-width: 900px) {
+  
+  .container-login{
+    width: 85vh;
+    height: 60vh;
+  }
+
+  .informações{
+    width: 28vh;
+  }
+
+}
+
+@media (max-width: 800px) {
+  
+  .container-login{
+    width: 75vh;
+    height: 50vh;
+  }
+
+  .informações{
+    width: 25vh;
+  }
+
+  .imagem{ 
+    width: 35vh;
+  }
+
+  .titulo{
+    display: none;
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  .imagem{
+    width: 30vh;
+  }
+
+  .container-login{
+    width: 60vh;
+    height: 45vh;
+  }
+
+  .informações{
+    width: 20vh;
+    gap: 10px;
+  }
+
+  .acesso{
+    font-size: 15px;
+  }
+
+  .cadastro{
+    font-size: 10px;
+  }
+
+  .titulo{
+    display: none;
+  }
+}
+
+@media (max-width: 550px) {
+
+  .imagem{
+    display: none;
+  }
+
+  .container-login{
+    width: 40vh;
+    height: 40vh;
+  }
+
+  .informações{
+    width: 25vh;
+  }
 }
 
 </style>
