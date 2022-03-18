@@ -7,7 +7,7 @@
       <img class="imagem" src="@/img/Cadastro.jpg" alt="l">
 
       <form @submit.prevent="createdPost" class="informações">
-        <h1 class="titulo">Cadastro</h1>
+        <h1 class="titulo1">Cadastro</h1>
 
         <span class="acesso">Nome </span>
 
@@ -105,7 +105,7 @@ export default {
 
 }
 
-.titulo{
+.titulo1{
   font-family: poppins;
   font-weight: 800;
   color: #5744F5;
@@ -193,7 +193,7 @@ export default {
     width: 40vh;
   }
 
-  .titulo{
+  .titulo1{
     font-size: 27px;
   }
 
@@ -210,7 +210,7 @@ export default {
     width: 30vh;
   }
 
-  .titulo{
+  .titulo1{
     font-size: 27px;
   }
 
@@ -236,7 +236,7 @@ export default {
     width: 35vh;
   }
 
-  .titulo{
+  .titulo1{
     font-size: 25px;
   }
 
@@ -266,7 +266,7 @@ export default {
     font-size: 10px;
   }
 
-  .titulo{
+  .titulo1{
     font-size: 25px;
   }
 }
