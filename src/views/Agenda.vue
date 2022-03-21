@@ -13,7 +13,14 @@
         <div class="pesquisa-1">
           <div class="pesquisa">
             <label class="pesquisa-nome" for="">Pesquisar Nome</label>
-            <input class="input-n" type="text" v-model="search"/>
+            <!-- <input class="input-n" type="text" v-model="search"/> -->
+            <Autocomplete 
+              class="input-n"
+              :results="filtro"
+              :display-item="(item)=> item.nome"
+              v-model="search"
+              @onSelect="selectItem()"
+            ></Autocomplete>
           </div>
 
             <router-link class="adicionar"  :to="{ name: 'Adicionar', params: { id: id }}">
@@ -49,10 +56,15 @@
 <script>
 
 import axios from 'axios'
+import Autocomplete from 'vue3-autocomplete'
+import 'vue3-autocomplete/dist/vue3-autocomplete.css'
 
 export default {
 
   props: ['id'],
+  components: {
+    Autocomplete
+  },
     
   data() {
     return {
@@ -67,22 +79,11 @@ export default {
     }
   },
 
-  // watch: {
-  //   value(value) {
-  //     this.keyword = value;
+  // methods: {
+  //   selectItem(item) {
+  //     this.selectItem = item
   //   }
   // },
-
-  // autocomplete() {
-  //   this.keyword = this.value;
-  // },
-
-  // methods: {
-  //   onInput(valor){
-  //     this.$emit( Event,'input', valor);
-  //   },
-  // },
-
   
   created() {
     const headers = { "Content-Type": "application/json" };
@@ -171,6 +172,8 @@ export default {
 }
 
 .input-n{
+  display: flex;
+  flex-direction: column-reverse;
   background-color: #5644f528;
   border: none;
   width: 150px;
