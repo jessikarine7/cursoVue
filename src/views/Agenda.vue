@@ -16,10 +16,11 @@
             <!-- <input class="input-n" type="text" v-model="search"/> -->
             <Autocomplete 
               class="input-n"
+              v-model="search"
               :results="filtro"
               :display-item="(item)=> item.nome"
-              v-model="search"
-              @onSelect="selectItem()"
+              :debounce="1"
+              @onSelect="selectItem"
             ></Autocomplete>
           </div>
 
@@ -57,7 +58,7 @@
 
 import axios from 'axios'
 import Autocomplete from 'vue3-autocomplete'
-import 'vue3-autocomplete/dist/vue3-autocomplete.css'
+// import 'vue3-autocomplete/dist/vue3-autocomplete.css'
 
 export default {
 
@@ -79,11 +80,11 @@ export default {
     }
   },
 
-  // methods: {
-  //   selectItem(item) {
-  //     this.selectItem = item
-  //   }
-  // },
+  methods: {
+    selectItem(item) {
+      this.search = item.nome
+    }
+  },
   
   created() {
     const headers = { "Content-Type": "application/json" };
@@ -176,8 +177,9 @@ export default {
   flex-direction: column-reverse;
   background-color: #5644f528;
   border: none;
-  width: 150px;
-  border-radius: 10px;
+  width: 80%;
+  height: 88%;
+  border-radius: 5px;
   color: #5744F5;
 }
 
@@ -430,5 +432,32 @@ export default {
     margin: 0;
   }
 }
+
+.vue3-results-container {
+  width: 154px;
+  position: absolute;
+  text-decoration-color: none;
+  // border-bottom: 1px solid white;
+  font-family: poppins;
+  border-radius: 5px;
+  margin-top: 1px;
+  z-index: 99;
+  background: #e4e2fd;
+}
+.vue3-results-item {
+  padding: 5px;
+  border-bottom: 1px solid white;
+  font-family: poppins;
+  text-decoration-color: white;
+  font-size: 14px;
+  color: #5744F5;;
+  &:hover {
+    cursor: pointer;
+    background: #5644f56b;
+    border-radius: 5px;
+  }
+}
+   
+
 </style>
 
