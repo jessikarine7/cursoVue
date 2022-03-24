@@ -11,18 +11,22 @@
 
       <div class="corpo">
         <div class="pesquisa-1">
-          <div class="pesquisa">
+          <form class="pesquisa">
             <label class="pesquisa-nome" for="">Pesquisar Nome</label>
             <!-- <input class="input-n" type="text" v-model="search"/> -->
             <Autocomplete 
               class="input-n"
               v-model="search"
-              :results="filtro"
+              :value="search"
+              :results="isFirstLoad ? [] : filtro"
               :display-item="(item)=> item.nome"
-              :debounce="1"
               @onSelect="selectItem"
+              @input="isFirstLoad = false"
             ></Autocomplete>
-          </div>
+
+            <input type="reset" value="limpar" />
+
+          </form>
 
             <router-link class="adicionar"  :to="{ name: 'Adicionar', params: { id: id }}">
               <p class="adicionar">Adicionar contatos</p>
@@ -71,6 +75,7 @@ export default {
     return {
       search: '',
       flag: false,
+      isFirstLoad: true,
       contatos: [
         { 
           nome: '',
@@ -82,6 +87,7 @@ export default {
 
   methods: {
     selectItem(item) {
+      console.log(item.nome);
       this.search = item.nome
     }
   },
@@ -453,7 +459,7 @@ export default {
   color: #5744F5;;
   &:hover {
     cursor: pointer;
-    background: #5644f56b;
+    background: #5644f534;
     border-radius: 5px;
   }
 }
