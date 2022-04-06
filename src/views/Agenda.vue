@@ -11,7 +11,7 @@
 
       <div class="corpo">
         <div class="pesquisa-1">
-          <form class="pesquisa">
+          <div class="pesquisa">
             <label class="pesquisa-nome" for="">Pesquisar Nome</label>
             <!-- <input class="input-n" type="text" v-model="search"/> -->
             <Autocomplete 
@@ -24,9 +24,9 @@
               @input="isFirstLoad = false"
             ></Autocomplete>
 
-            <input type="reset" value="limpar" />
+            <button  @click="reset" id="limpar">Limpar</button>
 
-          </form>
+          </div>
 
             <router-link class="adicionar"  :to="{ name: 'Adicionar', params: { id: id }}">
               <p class="adicionar">Adicionar contatos</p>
@@ -89,6 +89,9 @@ export default {
     selectItem(item) {
       console.log(item.nome);
       this.search = item.nome
+    },
+    reset() {
+      this.search = "";
     }
   },
   
@@ -104,7 +107,10 @@ export default {
   },
 
   computed: {
-    filtro: function(){
+    filtro: function() {
+      if (!this.search.length) {
+        return this.contatos;
+      }
       console.log('filtro');
       return this.contatos.filter((contato) => {
         return contato.nome.match(this.search);
@@ -278,6 +284,16 @@ export default {
 }
 
 .adicionar:hover{
+  color: #5744F5;
+}
+
+#limpar{
+  border-radius: 5px;
+  border: none;
+  background-color: #5644f528;
+  font-family: poppins;
+  font-size: 12px;
+  font-weight: 400;
   color: #5744F5;
 }
 
