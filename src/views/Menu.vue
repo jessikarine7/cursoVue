@@ -24,17 +24,17 @@
      
     </nav>
   </div>
-  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
 
 </template>
 
 <script>
 
-export default {
-  methods:{
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
 
-    agenda(){
-     const getUser= localStorage.getItem('userId')
+export default {
+  methods: {
+    agenda() {
+     const getUser = localStorage.getItem('userId')
       this.$router.push(`/Agenda/${getUser}`)
     },
 
@@ -47,7 +47,6 @@ export default {
 </script>
 
 <style  lang="scss">
-
 .nomeMenu{
   display: flex;
   justify-content: center;
@@ -67,7 +66,6 @@ export default {
   justify-content: center;
   align-content: center;
   gap: 30px;
-  
 }
 
 .nomeMenu:hover{
@@ -85,8 +83,6 @@ export default {
 }
 
 #sair{
-  font-size: 16px;
+  font-size: 20px;
 }
-
 </style>
-

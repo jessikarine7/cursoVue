@@ -120,6 +120,7 @@ export default {
   color: #5744F5;
   font-size: 15px;
   border: none;
+  appearance: none;
   border-radius: 10px;
   height: 35px;
 }

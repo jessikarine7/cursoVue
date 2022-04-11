@@ -29,7 +29,6 @@ export default {
   body{
     margin: 0;
     padding: 0;
-    background-image: url("img/fundo4.jpg");
     background-repeat: no-repeat; 
     background-size: 100%;
   }
