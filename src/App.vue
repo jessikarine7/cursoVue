@@ -12,7 +12,8 @@
 
 <script>
 
-import Menu from './views/Menu.vue'
+import Menu from './views/Menu.vue';
+// import { BootstrapVue } from 'bootstrap-vue';
 
 export default {
   name: 'App',

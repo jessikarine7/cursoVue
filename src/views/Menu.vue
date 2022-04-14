@@ -1,7 +1,7 @@
 <template>
 
   <div class="container"> 
-      <!-- <p class="logo">Metaway</p> -->
+      
     <nav class="menu">
       <router-link  class="nomeMenu" to="/">
         <h1 class="nomeMenu">Home</h1>
@@ -21,15 +21,24 @@
         <h1 class="nomeMenu" @click="handleClick" id="sair">sair</h1> 
 
       </div>
-     
+    
+      <div>
+        <b-dropdown id="dropdown-offset" offset="25" text="Offset Dropdown" class="m-2">
+          <b-dropdown-item href="#">Home</b-dropdown-item>
+          <b-dropdown-item href="#">Login</b-dropdown-item>
+          <b-dropdown-item href="#">Cadastro</b-dropdown-item>
+          <b-dropdown-item href="#">Agenda</b-dropdown-item>
+          <b-dropdown-item href="#">sair</b-dropdown-item>
+        </b-dropdown>
+      </div>
     </nav>
+
   </div>
 
 </template>
 
 <script>
-
-import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
+import 'bootstrap-vue/dist/bootstrap-vue.css';
 
 export default {
   methods: {
